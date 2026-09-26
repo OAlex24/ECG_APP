@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 # ============================================================
-# PAGE CONFIGURATION
+# PAGE SETTINGS
 # ============================================================
 
 st.set_page_config(
@@ -20,304 +20,99 @@ st.set_page_config(
 
 
 # ============================================================
-# CUSTOM CSS
+# COLOUR THEME
 # ============================================================
 
-st.markdown("""
-<style>
-
-/* ============================================================
-   GENERAL
-   ============================================================ */
-
-.stApp {
-    background-color: #F5F8FA;
-}
-
-.main {
-    color: #172B4D;
-}
-
-
-/* ============================================================
-   HEADER
-   ============================================================ */
-
-.main-header {
-    background: linear-gradient(135deg, #12355B, #176B87);
-    padding: 30px 35px;
-    border-radius: 14px;
-    margin-bottom: 25px;
-    color: white;
-    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.15);
-}
-
-.main-header-title {
-    color: white;
-    font-size: 34px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.main-header-subtitle {
-    color: #E8F4F7;
-    font-size: 17px;
-    margin-bottom: 14px;
-}
-
-.research-badge {
-    display: inline-block;
-    background-color: rgba(255,255,255,0.15);
-    color: white;
-    padding: 7px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    border: 1px solid rgba(255,255,255,0.25);
-}
-
-
-/* ============================================================
-   SECTION TITLES
-   ============================================================ */
-
-.section-title {
-    color: #12355B;
-    font-size: 23px;
-    font-weight: 700;
-    margin-top: 28px;
-    margin-bottom: 15px;
-    border-left: 5px solid #1B8798;
-    padding-left: 12px;
-}
-
-
-/* ============================================================
-   RESEARCH CARD
-   ============================================================ */
-
-.research-card {
-    background-color: white;
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid #DCE6EA;
-    border-top: 4px solid #176B87;
-    box-shadow: 0 2px 8px rgba(18, 53, 91, 0.06);
-    margin-bottom: 20px;
-}
-
-.research-title {
-    color: #12355B;
-    font-size: 21px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    line-height: 1.4;
-}
-
-.research-item {
-    color: #425466;
-    font-size: 15px;
-    margin-bottom: 9px;
-}
-
-.research-label {
-    color: #176B87;
-    font-weight: 700;
-}
-
-
-/* ============================================================
-   ABOUT CARD
-   ============================================================ */
-
-.about-card {
-    background-color: white;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #DCE6EA;
-    box-shadow: 0 2px 8px rgba(18, 53, 91, 0.06);
-    margin-bottom: 20px;
-}
-
-.about-text {
-    color: #425466;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 12px;
-}
-
-
-/* ============================================================
-   UPLOAD CARD
-   ============================================================ */
-
-.upload-card {
-    background-color: #EAF4F6;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #C9E0E5;
-    margin-bottom: 15px;
-}
-
-.upload-title {
-    color: #12355B;
-    font-size: 21px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.upload-description {
-    color: #425466;
-    font-size: 15px;
-}
-
-
-/* ============================================================
-   STEP CARDS
-   ============================================================ */
-
-.step-card {
-    background-color: white;
-    padding: 18px;
-    border-radius: 10px;
-    border: 1px solid #DCE6EA;
-    min-height: 135px;
-    box-shadow: 0 2px 6px rgba(18, 53, 91, 0.04);
-}
-
-.step-number {
-    color: #176B87;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.step-title {
-    color: #12355B;
-    font-size: 17px;
-    font-weight: 700;
-    margin: 7px 0;
-}
-
-.step-description {
-    color: #66788A;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* ============================================================
-   RESULT CARDS
-   ============================================================ */
-
-.result-card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #DCE6EA;
-    box-shadow: 0 3px 10px rgba(18, 53, 91, 0.07);
-    text-align: center;
-    min-height: 130px;
-}
-
-.result-label {
-    color: #66788A;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.result-value {
-    color: #12355B;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.confidence-value {
-    color: #16837F;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-
-/* ============================================================
-   SIDEBAR
-   ============================================================ */
-
-[data-testid="stSidebar"] {
-    background-color: #12355B;
-}
-
-[data-testid="stSidebar"] * {
-    color: white;
-}
-
-.sidebar-title {
-    color: white;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.sidebar-subtitle {
-    color: #B9DCE2;
-    font-size: 13px;
-    margin-bottom: 20px;
-}
-
-.sidebar-divider {
-    border-top: 1px solid rgba(255,255,255,0.20);
-    margin: 20px 0;
-}
-
-
-/* ============================================================
-   BUTTON
-   ============================================================ */
-
-.stButton > button {
-    background-color: #176B87;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 25px;
-    font-weight: 600;
-}
-
-.stButton > button:hover {
-    background-color: #12355B;
-    color: white;
-}
-
-
-/* ============================================================
-   FILE UPLOADER
-   ============================================================ */
-
-[data-testid="stFileUploader"] {
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    border: 1px solid #DCE6EA;
-}
-
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-.footer {
-    margin-top: 40px;
-    padding: 22px;
-    text-align: center;
-    color: #66788A;
-    border-top: 1px solid #DCE6EA;
-    font-size: 13px;
-}
-
-</style>
-""", unsafe_allow_html=True)
+NAVY = "#12355B"
+TEAL = "#176B87"
+LIGHT_BLUE = "#EAF4F6"
+LIGHT_GREY = "#F5F8FA"
+BORDER = "#DCE6EA"
+TEXT = "#425466"
 
 
 # ============================================================
-# LOAD MODEL
+# SIMPLE CSS
+# No HTML content is used for the application sections.
+# CSS is only used for visual styling.
+# ============================================================
+
+st.markdown(
+    f"""
+    <style>
+
+    .stApp {{
+        background-color: {LIGHT_GREY};
+    }}
+
+    /* Main headings */
+    h1 {{
+        color: {NAVY};
+    }}
+
+    h2 {{
+        color: {NAVY};
+    }}
+
+    h3 {{
+        color: {NAVY};
+    }}
+
+    /* Sidebar */
+    [data-testid="stSidebar"] {{
+        background-color: {NAVY};
+    }}
+
+    [data-testid="stSidebar"] * {{
+        color: white;
+    }}
+
+    /* Buttons */
+    .stButton > button {{
+        background-color: {TEAL};
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 10px 20px;
+    }}
+
+    .stButton > button:hover {{
+        background-color: {NAVY};
+        color: white;
+    }}
+
+    /* Upload box */
+    [data-testid="stFileUploader"] {{
+        background-color: white;
+        border: 1px solid {BORDER};
+        border-radius: 10px;
+        padding: 12px;
+    }}
+
+    /* Metric cards */
+    [data-testid="stMetric"] {{
+        background-color: white;
+        border: 1px solid {BORDER};
+        border-radius: 10px;
+        padding: 18px;
+    }}
+
+    /* Expander */
+    [data-testid="stExpander"] {{
+        border: 1px solid {BORDER};
+        border-radius: 10px;
+        background-color: white;
+    }}
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# ============================================================
+# LOAD TRAINED MODEL
 # ============================================================
 
 MODEL_PATH = Path(__file__).parent / "best_cnn_lstm_v2.keras"
@@ -335,25 +130,14 @@ model = load_model()
 # HEADER
 # ============================================================
 
-st.markdown(
-    """
-    <div class="main-header">
+st.title("❤️ ECG CLASSIFICATION SYSTEM")
 
-        <div class="main-header-title">
-            ❤️ ECG CLASSIFICATION SYSTEM
-        </div>
+st.subheader(
+    "AI-Based ECG Signal Classification Using an Optimized CNN-LSTM Model"
+)
 
-        <div class="main-header-subtitle">
-            AI-Based ECG Signal Classification Using an Optimized CNN-LSTM Model
-        </div>
-
-        <div class="research-badge">
-            MSc Computer Science Research Project
-        </div>
-
-    </div>
-    """,
-    unsafe_allow_html=True
+st.info(
+    "MSc Computer Science Research Project"
 )
 
 
@@ -363,157 +147,101 @@ st.markdown(
 
 with st.sidebar:
 
-    st.markdown(
-        '<div class="sidebar-title">ECG Research System</div>',
-        unsafe_allow_html=True
+    st.title("ECG Research System")
+
+    st.caption(
+        "Optimized CNN-LSTM Classification"
     )
 
-    st.markdown(
-        '<div class="sidebar-subtitle">Optimized CNN-LSTM Classification</div>',
-        unsafe_allow_html=True
-    )
+    st.divider()
 
-    st.markdown(
-        '<div class="sidebar-divider"></div>',
-        unsafe_allow_html=True
-    )
-
-    st.markdown("### System Information")
+    st.subheader("System Information")
 
     st.write("**Model:** Optimized CNN-LSTM")
     st.write("**Input:** 187 ECG signal values")
     st.write("**Classes:** 5")
     st.write("**Framework:** TensorFlow / Keras")
 
-    st.markdown(
-        '<div class="sidebar-divider"></div>',
-        unsafe_allow_html=True
-    )
+    st.divider()
 
-    st.markdown("### Researcher")
+    st.subheader("Researcher")
 
     st.write("**OLAFEMIWA Alex Omoniyi**")
-    st.write("Matric: PG/CSC/2024/214")
+    st.write("**Matric:** PG/CSC/2024/214")
 
-    st.markdown(
-        '<div class="sidebar-divider"></div>',
-        unsafe_allow_html=True
+    st.divider()
+
+    st.caption(
+        "Research prototype • Academic demonstration only"
     )
-
-    st.caption("Research prototype • Academic demonstration only")
 
 
 # ============================================================
 # RESEARCH PROJECT
 # ============================================================
 
-st.markdown(
-    '<div class="section-title">Research Project</div>',
-    unsafe_allow_html=True
+st.header("Research Project")
+
+st.subheader(
+    "Development of an Hybrid CNN-LSTM Models for "
+    "ECG-Based Heart Disease Diagnosis in Ondo State, Nigeria"
 )
 
-st.markdown(
-    '<div class="research-card">',
-    unsafe_allow_html=True
-)
+research_col1, research_col2 = st.columns(2)
 
-st.markdown(
-    """
-    <div class="research-title">
-        Development of an Hybrid CNN-LSTM Models for ECG-Based
-        Heart Disease Diagnosis in Ondo State, Nigeria
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+with research_col1:
 
-st.markdown(
-    """
-    <div class="research-item">
-        <span class="research-label">Researcher:</span>
-        OLAFEMIWA Alex Omoniyi
-    </div>
+    st.write("**Researcher**")
+    st.write("OLAFEMIWA Alex Omoniyi")
 
-    <div class="research-item">
-        <span class="research-label">Matric Number:</span>
-        PG/CSC/2024/214
-    </div>
+    st.write("**Matric Number**")
+    st.write("PG/CSC/2024/214")
 
-    <div class="research-item">
-        <span class="research-label">Programme:</span>
-        Master of Science (MSc) in Computer Science
-    </div>
+    st.write("**Programme**")
+    st.write("Master of Science (MSc) in Computer Science")
 
-    <div class="research-item">
-        <span class="research-label">Department:</span>
-        Department of Computer Science
-    </div>
+    st.write("**Department**")
+    st.write("Department of Computer Science")
 
-    <div class="research-item">
-        <span class="research-label">Faculty:</span>
-        Faculty of Science
-    </div>
 
-    <div class="research-item">
-        <span class="research-label">Institution:</span>
-        Westley University, Ondo, Nigeria
-    </div>
+with research_col2:
 
-    <div class="research-item">
-        <span class="research-label">Supervisor:</span>
-        Dr. Makinde
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    st.write("**Faculty**")
+    st.write("Faculty of Science")
 
-st.markdown(
-    '</div>',
-    unsafe_allow_html=True
-)
+    st.write("**Institution**")
+    st.write("Westley University, Ondo, Nigeria")
+
+    st.write("**Supervisor**")
+    st.write("Dr. Makinde")
+
+
+st.divider()
 
 
 # ============================================================
 # ABOUT THE SYSTEM
 # ============================================================
 
-st.markdown(
-    '<div class="section-title">About the System</div>',
-    unsafe_allow_html=True
+st.header("About the System")
+
+st.write(
+    "This research prototype uses an optimized "
+    "CNN-LSTM deep learning model to classify ECG "
+    "signals into five classes."
 )
 
-st.markdown(
-    '<div class="about-card">',
-    unsafe_allow_html=True
+st.write(
+    "The CNN component extracts important patterns "
+    "from the ECG waveform, while the LSTM component "
+    "captures sequential information within the signal."
 )
 
-st.markdown(
-    """
-    <div class="about-text">
-        This research prototype uses an optimized
-        <strong>CNN-LSTM deep learning model</strong>
-        to classify ECG signals into five classes.
-    </div>
-
-    <div class="about-text">
-        The CNN component extracts important patterns from
-        the ECG waveform, while the LSTM component captures
-        sequential information within the signal.
-    </div>
-
-    <div class="about-text">
-        The system accepts one ECG signal containing exactly
-        <strong>187 numerical values</strong> and returns a
-        predicted class together with the model's confidence
-        and class probabilities.
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '</div>',
-    unsafe_allow_html=True
+st.write(
+    "The system accepts one ECG signal containing "
+    "exactly 187 numerical values and returns a "
+    "predicted class together with the model's "
+    "confidence and class probabilities."
 )
 
 
@@ -521,158 +249,76 @@ st.markdown(
 # HOW THE SYSTEM WORKS
 # ============================================================
 
-st.markdown(
-    '<div class="section-title">How the System Works</div>',
-    unsafe_allow_html=True
-)
+st.header("How the System Works")
 
-col1, col2, col3, col4 = st.columns(4)
+step1, step2, step3, step4 = st.columns(4)
 
+with step1:
 
-with col1:
+    st.subheader("01 • Upload")
 
-    st.markdown(
-        """
-        <div class="step-card">
-
-            <div class="step-number">01</div>
-
-            <div class="step-title">
-                Upload
-            </div>
-
-            <div class="step-description">
-                Upload a CSV file containing one ECG signal
-                with 187 numerical values.
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.write(
+        "Upload a CSV file containing one ECG signal "
+        "with 187 numerical values."
     )
 
 
-with col2:
+with step2:
 
-    st.markdown(
-        """
-        <div class="step-card">
+    st.subheader("02 • Preprocess")
 
-            <div class="step-number">02</div>
-
-            <div class="step-title">
-                Preprocess
-            </div>
-
-            <div class="step-description">
-                The signal is validated and reshaped into
-                the required model input format.
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.write(
+        "The signal is validated and reshaped into "
+        "the required model input format."
     )
 
 
-with col3:
+with step3:
 
-    st.markdown(
-        """
-        <div class="step-card">
+    st.subheader("03 • Classify")
 
-            <div class="step-number">03</div>
-
-            <div class="step-title">
-                Classify
-            </div>
-
-            <div class="step-description">
-                The optimized CNN-LSTM model processes
-                the ECG signal.
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.write(
+        "The optimized CNN-LSTM model processes "
+        "the ECG signal."
     )
 
 
-with col4:
+with step4:
 
-    st.markdown(
-        """
-        <div class="step-card">
+    st.subheader("04 • Display")
 
-            <div class="step-number">04</div>
-
-            <div class="step-title">
-                Display
-            </div>
-
-            <div class="step-description">
-                The predicted class, confidence and
-                probability distribution are displayed.
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.write(
+        "The predicted class, confidence and "
+        "probability distribution are displayed."
     )
 
 
 # ============================================================
-# ECG SIGNAL CLASSIFICATION
+# ECG CLASSIFICATION
 # ============================================================
 
-st.markdown(
-    '<div class="section-title">ECG Signal Classification</div>',
-    unsafe_allow_html=True
+st.header("ECG Signal Classification")
+
+st.subheader("📁 Upload ECG Signal")
+
+st.write(
+    "Upload a CSV file containing one ECG signal "
+    "with exactly 187 numerical values."
 )
 
-
-# ============================================================
-# UPLOAD INFORMATION
-# ============================================================
-
-st.markdown(
-    '<div class="upload-card">',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <div class="upload-title">
-        📁 Upload ECG Signal
-    </div>
-
-    <div class="upload-description">
-        Upload a CSV file containing one ECG signal with
-        exactly <strong>187 numerical values</strong>.
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '</div>',
-    unsafe_allow_html=True
-)
-
-
-# ============================================================
-# FILE UPLOADER
-# ============================================================
 
 uploaded_file = st.file_uploader(
     "Choose an ECG CSV file",
     type=["csv"],
-    help="The uploaded file must contain exactly 187 numerical ECG signal values."
+    help=(
+        "The uploaded file must contain exactly "
+        "187 numerical ECG signal values."
+    )
 )
 
 
 # ============================================================
-# ECG PROCESSING
+# PROCESS UPLOADED ECG
 # ============================================================
 
 if uploaded_file is not None:
@@ -685,7 +331,7 @@ if uploaded_file is not None:
             header=None
         )
 
-        # Flatten the data
+        # Flatten all values
         values = df.values.flatten()
 
         # Convert to numeric
@@ -694,12 +340,16 @@ if uploaded_file is not None:
             errors="coerce"
         ).dropna().values
 
-        # Validate number of ECG values
+        # ====================================================
+        # VALIDATE
+        # ====================================================
+
         if len(values) != 187:
 
             st.error(
-                f"Invalid ECG signal. The system requires exactly "
-                f"187 numerical values, but {len(values)} values were detected."
+                f"Invalid ECG signal. The system requires "
+                f"exactly 187 numerical values, but "
+                f"{len(values)} values were detected."
             )
 
         else:
@@ -708,18 +358,14 @@ if uploaded_file is not None:
                 "✓ ECG signal successfully loaded and validated."
             )
 
-
             # =================================================
             # ECG WAVEFORM
             # =================================================
 
-            st.markdown(
-                '<div class="section-title">ECG Waveform</div>',
-                unsafe_allow_html=True
-            )
+            st.header("ECG Waveform")
 
             fig, ax = plt.subplots(
-                figsize=(12, 3.5)
+                figsize=(12, 4)
             )
 
             ax.plot(
@@ -736,13 +382,13 @@ if uploaded_file is not None:
 
             plt.tight_layout()
 
-            st.pyplot(
-                fig
-            )
+            st.pyplot(fig)
+
+            plt.close(fig)
 
 
             # =================================================
-            # PREDICTION
+            # PREDICT
             # =================================================
 
             if st.button(
@@ -759,72 +405,45 @@ if uploaded_file is not None:
                     1
                 )
 
-                # Predict
+                # Model prediction
                 prediction = model.predict(
                     input_signal,
                     verbose=0
                 )[0]
 
-                # Get predicted class
+                # Predicted class
                 predicted_class = int(
                     np.argmax(prediction)
                 )
 
-                # Get confidence
-                confidence = float(
-                    prediction[predicted_class]
-                ) * 100
-
-
-                # =============================================
-                # PREDICTION RESULT
-                # =============================================
-
-                st.markdown(
-                    '<div class="section-title">Prediction Result</div>',
-                    unsafe_allow_html=True
+                # Confidence
+                confidence = (
+                    float(
+                        prediction[predicted_class]
+                    ) * 100
                 )
 
-                result_col1, result_col2 = st.columns(2)
 
+                # =============================================
+                # RESULT
+                # =============================================
 
-                with result_col1:
+                st.header("Prediction Result")
 
-                    st.markdown(
-                        f"""
-                        <div class="result-card">
+                result1, result2 = st.columns(2)
 
-                            <div class="result-label">
-                                PREDICTED CLASS
-                            </div>
+                with result1:
 
-                            <div class="result-value">
-                                Class {predicted_class}
-                            </div>
-
-                        </div>
-                        """,
-                        unsafe_allow_html=True
+                    st.metric(
+                        "Predicted Class",
+                        f"Class {predicted_class}"
                     )
 
+                with result2:
 
-                with result_col2:
-
-                    st.markdown(
-                        f"""
-                        <div class="result-card">
-
-                            <div class="result-label">
-                                MODEL CONFIDENCE
-                            </div>
-
-                            <div class="confidence-value">
-                                {confidence:.2f}%
-                            </div>
-
-                        </div>
-                        """,
-                        unsafe_allow_html=True
+                    st.metric(
+                        "Model Confidence",
+                        f"{confidence:.2f}%"
                     )
 
 
@@ -832,9 +451,8 @@ if uploaded_file is not None:
                 # PROBABILITY DISTRIBUTION
                 # =============================================
 
-                st.markdown(
-                    '<div class="section-title">Class Probability Distribution</div>',
-                    unsafe_allow_html=True
+                st.header(
+                    "Class Probability Distribution"
                 )
 
                 probability_df = pd.DataFrame(
@@ -856,10 +474,12 @@ if uploaded_file is not None:
 
                 with chart_col:
 
+                    chart_data = probability_df.set_index(
+                        "Class"
+                    )
+
                     st.bar_chart(
-                        probability_df.set_index(
-                            "Class"
-                        )
+                        chart_data
                     )
 
 
@@ -884,9 +504,8 @@ if uploaded_file is not None:
                 # INTERPRETATION
                 # =============================================
 
-                st.markdown(
-                    '<div class="section-title">System Interpretation</div>',
-                    unsafe_allow_html=True
+                st.header(
+                    "System Interpretation"
                 )
 
                 st.info(
@@ -898,10 +517,7 @@ if uploaded_file is not None:
 
                 st.caption(
                     "Class labels are presented as Class 0–Class 4 "
-                    "in this research prototype. This application "
-                    "is intended for academic research and "
-                    "demonstration only and should not be used "
-                    "as a clinical diagnostic tool."
+                    "in this research prototype."
                 )
 
 
@@ -918,11 +534,11 @@ if uploaded_file is not None:
 # ABOUT THE RESEARCH
 # ============================================================
 
-st.markdown("---")
+st.divider()
 
 with st.expander("🎓 About This Research"):
 
-    st.markdown("### Thesis Information")
+    st.subheader("Thesis Information")
 
     st.write(
         "**Title:** Development of an Hybrid CNN-LSTM Models "
@@ -957,7 +573,7 @@ with st.expander("🎓 About This Research"):
         "**Supervisor:** Dr. Makinde"
     )
 
-    st.markdown("### Model")
+    st.subheader("Model")
 
     st.write(
         "The system uses an optimized hybrid CNN-LSTM architecture."
@@ -969,21 +585,30 @@ with st.expander("🎓 About This Research"):
         "relationships in the extracted features."
     )
 
-    st.markdown("### Model Performance")
+    st.subheader("Model Performance")
 
-    st.write("• Accuracy: **97.83%**")
-    st.write("• Precision: **98.09%**")
-    st.write("• Recall: **97.83%**")
-    st.write("• F1-Score: **97.93%**")
-    st.write("• 5-Fold Cross-Validation Mean Accuracy: **98.45%**")
+    performance_col1, performance_col2 = st.columns(2)
 
-    st.markdown("### Important Notice")
+    with performance_col1:
 
-    st.info(
-        "This application is a research prototype for academic "
-        "demonstration. It is not intended to replace professional "
-        "medical examination, clinical diagnosis, or medical "
-        "decision-making."
+        st.write("Accuracy: **97.83%**")
+        st.write("Precision: **98.09%**")
+        st.write("Recall: **97.83%**")
+
+    with performance_col2:
+
+        st.write("F1-Score: **97.93%**")
+        st.write(
+            "5-Fold CV Mean Accuracy: **98.45%**"
+        )
+
+    st.subheader("Important Notice")
+
+    st.warning(
+        "This application is a research prototype for "
+        "academic demonstration. It is not intended to "
+        "replace professional medical examination, "
+        "clinical diagnosis, or medical decision-making."
     )
 
 
@@ -991,19 +616,12 @@ with st.expander("🎓 About This Research"):
 # FOOTER
 # ============================================================
 
-st.markdown(
-    """
-    <div class="footer">
+st.divider()
 
-        <strong>ECG Classification System</strong><br><br>
-
-        OLAFEMIWA Alex Omoniyi • PG/CSC/2024/214<br>
-
-        MSc Computer Science • Westley University, Ondo, Nigeria<br><br>
-
-        Research Prototype • Optimized CNN-LSTM Model
-
-    </div>
-    """,
-    unsafe_allow_html=True
+st.caption(
+    "ECG Classification System | "
+    "OLAFEMIWA Alex Omoniyi | "
+    "PG/CSC/2024/214 | "
+    "MSc Computer Science | "
+    "Wesley University, Ondo, Nigeria"
 )
