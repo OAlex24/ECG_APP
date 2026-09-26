@@ -26,6 +26,10 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+/* ============================================================
+   GENERAL
+   ============================================================ */
+
 .stApp {
     background-color: #F5F8FA;
 }
@@ -34,7 +38,10 @@ st.markdown("""
     color: #172B4D;
 }
 
-/* HEADER */
+
+/* ============================================================
+   HEADER
+   ============================================================ */
 
 .main-header {
     background: linear-gradient(135deg, #12355B, #176B87);
@@ -45,17 +52,17 @@ st.markdown("""
     box-shadow: 0 4px 12px rgba(18, 53, 91, 0.15);
 }
 
-.main-header h1 {
+.main-header-title {
     color: white;
-    margin: 0 0 8px 0;
     font-size: 34px;
     font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.main-header p {
+.main-header-subtitle {
     color: #E8F4F7;
-    margin: 0;
     font-size: 17px;
+    margin-bottom: 14px;
 }
 
 .research-badge {
@@ -65,45 +72,28 @@ st.markdown("""
     padding: 7px 14px;
     border-radius: 20px;
     font-size: 13px;
-    margin-top: 14px;
     border: 1px solid rgba(255,255,255,0.25);
 }
 
 
-/* SECTION HEADINGS */
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
 
 .section-title {
     color: #12355B;
     font-size: 23px;
     font-weight: 700;
-    margin-top: 25px;
+    margin-top: 28px;
     margin-bottom: 15px;
     border-left: 5px solid #1B8798;
     padding-left: 12px;
 }
 
 
-/* INFORMATION CARDS */
-
-.info-card {
-    background-color: white;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #DCE6EA;
-    box-shadow: 0 2px 8px rgba(18, 53, 91, 0.06);
-    margin-bottom: 15px;
-}
-
-.info-card h3 {
-    color: #12355B;
-}
-
-.info-card p {
-    color: #425466;
-}
-
-
-/* RESEARCH CARD */
+/* ============================================================
+   RESEARCH CARD
+   ============================================================ */
 
 .research-card {
     background-color: white;
@@ -112,24 +102,78 @@ st.markdown("""
     border: 1px solid #DCE6EA;
     border-top: 4px solid #176B87;
     box-shadow: 0 2px 8px rgba(18, 53, 91, 0.06);
+    margin-bottom: 20px;
 }
 
-.research-card h3 {
+.research-title {
     color: #12355B;
-    margin-top: 0;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.4;
 }
 
-.research-card p {
+.research-item {
     color: #425466;
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+
+.research-label {
+    color: #176B87;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   ABOUT CARD
+   ============================================================ */
+
+.about-card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #DCE6EA;
+    box-shadow: 0 2px 8px rgba(18, 53, 91, 0.06);
+    margin-bottom: 20px;
+}
+
+.about-text {
+    color: #425466;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   UPLOAD CARD
+   ============================================================ */
+
+.upload-card {
+    background-color: #EAF4F6;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #C9E0E5;
+    margin-bottom: 15px;
+}
+
+.upload-title {
+    color: #12355B;
+    font-size: 21px;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
-.research-card strong {
-    color: #176B87;
+.upload-description {
+    color: #425466;
+    font-size: 15px;
 }
 
 
-/* STEP CARDS */
+/* ============================================================
+   STEP CARDS
+   ============================================================ */
 
 .step-card {
     background-color: white;
@@ -146,38 +190,23 @@ st.markdown("""
     font-weight: 700;
 }
 
-.step-card h4 {
+.step-title {
     color: #12355B;
+    font-size: 17px;
+    font-weight: 700;
     margin: 7px 0;
 }
 
-.step-card p {
+.step-description {
     color: #66788A;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 
-/* UPLOAD CARD */
-
-.upload-card {
-    background-color: #EAF4F6;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #C9E0E5;
-    margin-bottom: 15px;
-}
-
-.upload-card h3 {
-    color: #12355B;
-    margin-top: 0;
-}
-
-.upload-card p {
-    color: #425466;
-}
-
-
-/* RESULT CARDS */
+/* ============================================================
+   RESULT CARDS
+   ============================================================ */
 
 .result-card {
     background-color: white;
@@ -209,19 +238,9 @@ st.markdown("""
 }
 
 
-/* FOOTER */
-
-.footer {
-    margin-top: 40px;
-    padding: 22px;
-    text-align: center;
-    color: #66788A;
-    border-top: 1px solid #DCE6EA;
-    font-size: 13px;
-}
-
-
-/* SIDEBAR */
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
 
 [data-testid="stSidebar"] {
     background-color: #12355B;
@@ -249,7 +268,9 @@ st.markdown("""
 }
 
 
-/* BUTTON */
+/* ============================================================
+   BUTTON
+   ============================================================ */
 
 .stButton > button {
     background-color: #176B87;
@@ -266,13 +287,29 @@ st.markdown("""
 }
 
 
-/* FILE UPLOADER */
+/* ============================================================
+   FILE UPLOADER
+   ============================================================ */
 
 [data-testid="stFileUploader"] {
     background-color: white;
     border-radius: 10px;
     padding: 10px;
     border: 1px solid #DCE6EA;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    margin-top: 40px;
+    padding: 22px;
+    text-align: center;
+    color: #66788A;
+    border-top: 1px solid #DCE6EA;
+    font-size: 13px;
 }
 
 </style>
@@ -301,13 +338,19 @@ model = load_model()
 st.markdown(
     """
     <div class="main-header">
-        <h1>❤️ ECG CLASSIFICATION SYSTEM</h1>
-        <p>
+
+        <div class="main-header-title">
+            ❤️ ECG CLASSIFICATION SYSTEM
+        </div>
+
+        <div class="main-header-subtitle">
             AI-Based ECG Signal Classification Using an Optimized CNN-LSTM Model
-        </p>
+        </div>
+
         <div class="research-badge">
             MSc Computer Science Research Project
         </div>
+
     </div>
     """,
     unsafe_allow_html=True
@@ -370,51 +413,62 @@ st.markdown(
 )
 
 st.markdown(
+    '<div class="research-card">',
+    unsafe_allow_html=True
+)
+
+st.markdown(
     """
-    <div class="research-card">
-
-        <h3>
-            Development of an Hybrid CNN-LSTM Models for
-            ECG-Based Heart Disease Diagnosis in Ondo State, Nigeria
-        </h3>
-
-        <p>
-            <strong>Researcher:</strong>
-            OLAFEMIWA Alex Omoniyi
-        </p>
-
-        <p>
-            <strong>Matric Number:</strong>
-            PG/CSC/2024/214
-        </p>
-
-        <p>
-            <strong>Programme:</strong>
-            Master of Science (MSc) in Computer Science
-        </p>
-
-        <p>
-            <strong>Department:</strong>
-            Department of Computer Science
-        </p>
-
-        <p>
-            <strong>Faculty:</strong>
-            Faculty of Science
-        </p>
-
-        <p>
-            <strong>Institution:</strong>
-            Westley University, Ondo, Nigeria
-        </p>
-
-        <p>
-            <strong>Supervisor:</strong>
-            Dr. Makinde
-        </p>
-
+    <div class="research-title">
+        Development of an Hybrid CNN-LSTM Models for ECG-Based
+        Heart Disease Diagnosis in Ondo State, Nigeria
     </div>
     """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class="research-item">
+        <span class="research-label">Researcher:</span>
+        OLAFEMIWA Alex Omoniyi
+    </div>
+
+    <div class="research-item">
+        <span class="research-label">Matric Number:</span>
+        PG/CSC/2024/214
+    </div>
+
+    <div class="research-item">
+        <span class="research-label">Programme:</span>
+        Master of Science (MSc) in Computer Science
+    </div>
+
+    <div class="research-item">
+        <span class="research-label">Department:</span>
+        Department of Computer Science
+    </div>
+
+    <div class="research-item">
+        <span class="research-label">Faculty:</span>
+        Faculty of Science
+    </div>
+
+    <div class="research-item">
+        <span class="research-label">Institution:</span>
+        Westley University, Ondo, Nigeria
+    </div>
+
+    <div class="research-item">
+        <span class="research-label">Supervisor:</span>
+        Dr. Makinde
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '</div>',
     unsafe_allow_html=True
 )
 
@@ -429,30 +483,36 @@ st.markdown(
 )
 
 st.markdown(
+    '<div class="about-card">',
+    unsafe_allow_html=True
+)
+
+st.markdown(
     """
-    <div class="info-card">
+    <div class="about-text">
+        This research prototype uses an optimized
+        <strong>CNN-LSTM deep learning model</strong>
+        to classify ECG signals into five classes.
+    </div>
 
-        <p>
-            This research prototype uses an optimized
-            <strong>CNN-LSTM deep learning model</strong>
-            to classify ECG signals into five classes.
-        </p>
+    <div class="about-text">
+        The CNN component extracts important patterns from
+        the ECG waveform, while the LSTM component captures
+        sequential information within the signal.
+    </div>
 
-        <p>
-            The CNN component extracts important patterns from
-            the ECG waveform, while the LSTM component captures
-            sequential information within the signal.
-        </p>
-
-        <p>
-            The system accepts one ECG signal containing exactly
-            <strong>187 numerical values</strong> and returns a
-            predicted class together with the model's confidence
-            and class probabilities.
-        </p>
-
+    <div class="about-text">
+        The system accepts one ECG signal containing exactly
+        <strong>187 numerical values</strong> and returns a
+        predicted class together with the model's confidence
+        and class probabilities.
     </div>
     """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '</div>',
     unsafe_allow_html=True
 )
 
@@ -468,65 +528,93 @@ st.markdown(
 
 col1, col2, col3, col4 = st.columns(4)
 
+
 with col1:
 
     st.markdown(
         """
         <div class="step-card">
+
             <div class="step-number">01</div>
-            <h4>Upload</h4>
-            <p>
+
+            <div class="step-title">
+                Upload
+            </div>
+
+            <div class="step-description">
                 Upload a CSV file containing one ECG signal
                 with 187 numerical values.
-            </p>
+            </div>
+
         </div>
         """,
         unsafe_allow_html=True
     )
+
 
 with col2:
 
     st.markdown(
         """
         <div class="step-card">
+
             <div class="step-number">02</div>
-            <h4>Preprocess</h4>
-            <p>
+
+            <div class="step-title">
+                Preprocess
+            </div>
+
+            <div class="step-description">
                 The signal is validated and reshaped into
                 the required model input format.
-            </p>
+            </div>
+
         </div>
         """,
         unsafe_allow_html=True
     )
+
 
 with col3:
 
     st.markdown(
         """
         <div class="step-card">
+
             <div class="step-number">03</div>
-            <h4>Classify</h4>
-            <p>
+
+            <div class="step-title">
+                Classify
+            </div>
+
+            <div class="step-description">
                 The optimized CNN-LSTM model processes
                 the ECG signal.
-            </p>
+            </div>
+
         </div>
         """,
         unsafe_allow_html=True
     )
+
 
 with col4:
 
     st.markdown(
         """
         <div class="step-card">
+
             <div class="step-number">04</div>
-            <h4>Display</h4>
-            <p>
+
+            <div class="step-title">
+                Display
+            </div>
+
+            <div class="step-description">
                 The predicted class, confidence and
                 probability distribution are displayed.
-            </p>
+            </div>
+
         </div>
         """,
         unsafe_allow_html=True
@@ -534,7 +622,7 @@ with col4:
 
 
 # ============================================================
-# UPLOAD SECTION
+# ECG SIGNAL CLASSIFICATION
 # ============================================================
 
 st.markdown(
@@ -542,21 +630,39 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+
+# ============================================================
+# UPLOAD INFORMATION
+# ============================================================
+
+st.markdown(
+    '<div class="upload-card">',
+    unsafe_allow_html=True
+)
+
 st.markdown(
     """
-    <div class="upload-card">
+    <div class="upload-title">
+        📁 Upload ECG Signal
+    </div>
 
-        <h3>📁 Upload ECG Signal</h3>
-
-        <p>
-            Upload a CSV file containing one ECG signal with
-            exactly <strong>187 numerical values</strong>.
-        </p>
-
+    <div class="upload-description">
+        Upload a CSV file containing one ECG signal with
+        exactly <strong>187 numerical values</strong>.
     </div>
     """,
     unsafe_allow_html=True
 )
+
+st.markdown(
+    '</div>',
+    unsafe_allow_html=True
+)
+
+
+# ============================================================
+# FILE UPLOADER
+# ============================================================
 
 uploaded_file = st.file_uploader(
     "Choose an ECG CSV file",
@@ -566,17 +672,20 @@ uploaded_file = st.file_uploader(
 
 
 # ============================================================
-# PROCESS ECG
+# ECG PROCESSING
 # ============================================================
 
 if uploaded_file is not None:
 
     try:
 
-        # Read uploaded CSV
-        df = pd.read_csv(uploaded_file, header=None)
+        # Read CSV
+        df = pd.read_csv(
+            uploaded_file,
+            header=None
+        )
 
-        # Flatten everything into one sequence
+        # Flatten the data
         values = df.values.flatten()
 
         # Convert to numeric
@@ -585,7 +694,7 @@ if uploaded_file is not None:
             errors="coerce"
         ).dropna().values
 
-        # Validate length
+        # Validate number of ECG values
         if len(values) != 187:
 
             st.error(
@@ -609,7 +718,9 @@ if uploaded_file is not None:
                 unsafe_allow_html=True
             )
 
-            fig, ax = plt.subplots(figsize=(12, 3.5))
+            fig, ax = plt.subplots(
+                figsize=(12, 3.5)
+            )
 
             ax.plot(
                 values,
@@ -618,15 +729,20 @@ if uploaded_file is not None:
 
             ax.set_xlabel("Sample")
             ax.set_ylabel("Amplitude")
-            ax.grid(alpha=0.25)
+
+            ax.grid(
+                alpha=0.25
+            )
 
             plt.tight_layout()
 
-            st.pyplot(fig)
+            st.pyplot(
+                fig
+            )
 
 
             # =================================================
-            # PREDICT BUTTON
+            # PREDICTION
             # =================================================
 
             if st.button(
@@ -634,30 +750,34 @@ if uploaded_file is not None:
                 use_container_width=True
             ):
 
-                # Reshape for CNN-LSTM
+                # Reshape input
                 input_signal = values.astype(
                     np.float32
-                ).reshape(1, 187, 1)
+                ).reshape(
+                    1,
+                    187,
+                    1
+                )
 
-                # Model prediction
+                # Predict
                 prediction = model.predict(
                     input_signal,
                     verbose=0
                 )[0]
 
-                # Predicted class
+                # Get predicted class
                 predicted_class = int(
                     np.argmax(prediction)
                 )
 
-                # Confidence
+                # Get confidence
                 confidence = float(
                     prediction[predicted_class]
                 ) * 100
 
 
                 # =============================================
-                # RESULT
+                # PREDICTION RESULT
                 # =============================================
 
                 st.markdown(
@@ -666,6 +786,7 @@ if uploaded_file is not None:
                 )
 
                 result_col1, result_col2 = st.columns(2)
+
 
                 with result_col1:
 
@@ -685,6 +806,7 @@ if uploaded_file is not None:
                         """,
                         unsafe_allow_html=True
                     )
+
 
                 with result_col2:
 
@@ -707,7 +829,7 @@ if uploaded_file is not None:
 
 
                 # =============================================
-                # PROBABILITIES
+                # PROBABILITY DISTRIBUTION
                 # =============================================
 
                 st.markdown(
@@ -726,9 +848,11 @@ if uploaded_file is not None:
                     }
                 )
 
+
                 chart_col, table_col = st.columns(
                     [2, 1]
                 )
+
 
                 with chart_col:
 
@@ -737,6 +861,7 @@ if uploaded_file is not None:
                             "Class"
                         )
                     )
+
 
                 with table_col:
 
@@ -780,7 +905,7 @@ if uploaded_file is not None:
                 )
 
 
-    except Exception:
+    except Exception as error:
 
         st.error(
             "Unable to process the uploaded file. "
@@ -797,65 +922,68 @@ st.markdown("---")
 
 with st.expander("🎓 About This Research"):
 
-    st.markdown(
-        """
-        ### Thesis Information
+    st.markdown("### Thesis Information")
 
-        **Title:**  
-        Development of an Hybrid CNN-LSTM Models for ECG-Based
-        Heart Disease Diagnosis in Ondo State, Nigeria
+    st.write(
+        "**Title:** Development of an Hybrid CNN-LSTM Models "
+        "for ECG-Based Heart Disease Diagnosis in Ondo State, Nigeria"
+    )
 
-        **Researcher:**  
-        OLAFEMIWA Alex Omoniyi
+    st.write(
+        "**Researcher:** OLAFEMIWA Alex Omoniyi"
+    )
 
-        **Matric Number:**  
-        PG/CSC/2024/214
+    st.write(
+        "**Matric Number:** PG/CSC/2024/214"
+    )
 
-        **Programme:**  
-        Master of Science (MSc) in Computer Science
+    st.write(
+        "**Programme:** Master of Science (MSc) in Computer Science"
+    )
 
-        **Department:**  
-        Department of Computer Science
+    st.write(
+        "**Department:** Department of Computer Science"
+    )
 
-        **Faculty:**  
-        Faculty of Science
+    st.write(
+        "**Faculty:** Faculty of Science"
+    )
 
-        **Institution:**  
-        Westley University, Ondo, Nigeria
+    st.write(
+        "**Institution:** Westley University, Ondo, Nigeria"
+    )
 
-        **Supervisor:**  
-        Dr. Makinde
+    st.write(
+        "**Supervisor:** Dr. Makinde"
+    )
 
+    st.markdown("### Model")
 
-        ### Model
+    st.write(
+        "The system uses an optimized hybrid CNN-LSTM architecture."
+    )
 
-        The system uses an optimized hybrid **CNN-LSTM**
-        architecture.
+    st.write(
+        "The CNN layers extract spatial patterns from ECG signals, "
+        "while the Bidirectional LSTM captures sequential "
+        "relationships in the extracted features."
+    )
 
-        The CNN layers extract spatial patterns from ECG signals,
-        while the Bidirectional LSTM captures sequential
-        relationships in the extracted features.
+    st.markdown("### Model Performance")
 
-        The final model was trained and evaluated using ECG data
-        from the research dataset.
+    st.write("• Accuracy: **97.83%**")
+    st.write("• Precision: **98.09%**")
+    st.write("• Recall: **97.83%**")
+    st.write("• F1-Score: **97.93%**")
+    st.write("• 5-Fold Cross-Validation Mean Accuracy: **98.45%**")
 
+    st.markdown("### Important Notice")
 
-        ### Model Performance
-
-        - Accuracy: **97.83%**
-        - Precision: **98.09%**
-        - Recall: **97.83%**
-        - F1-Score: **97.93%**
-        - 5-Fold Cross-Validation Mean Accuracy: **98.45%**
-
-
-        ### Important Notice
-
-        This application is a **research prototype for academic
-        demonstration**. It is not intended to replace professional
-        medical examination, clinical diagnosis, or medical
-        decision-making.
-        """
+    st.info(
+        "This application is a research prototype for academic "
+        "demonstration. It is not intended to replace professional "
+        "medical examination, clinical diagnosis, or medical "
+        "decision-making."
     )
 
 
@@ -871,7 +999,7 @@ st.markdown(
 
         OLAFEMIWA Alex Omoniyi • PG/CSC/2024/214<br>
 
-        MSc Computer Science • Wesley University, Ondo, Nigeria<br><br>
+        MSc Computer Science • Westley University, Ondo, Nigeria<br><br>
 
         Research Prototype • Optimized CNN-LSTM Model
 
